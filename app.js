@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const entriesRouter = require('./routes/entries');
+const notesRouter = require('./routes/notes');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(cookieParser());
 // API Routes
 app.use('/', indexRouter);
 app.use('/entries', entriesRouter);
+app.use('/notes', notesRouter);
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
